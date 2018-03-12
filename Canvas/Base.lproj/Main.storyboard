@@ -81,7 +81,7 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="XdP-D8-Y2f" appends="YES" id="ed6-bq-Ra9"/>
+                                    <outletCollection property="gestureRecognizers" destination="jjz-3Q-CN0" appends="YES" id="0No-df-2rN"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -92,14 +92,9 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <panGestureRecognizer minimumNumberOfTouches="1" id="XdP-D8-Y2f">
-                    <connections>
-                        <action selector="didPanFace:" destination="BYZ-38-t0r" id="lF1-rM-hhJ"/>
-                    </connections>
-                </panGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="9iA-UO-k3N">
                     <connections>
-                        <action selector="didPanFace:" destination="BYZ-38-t0r" id="5UI-LJ-0ux"/>
+                        <action selector="didPanTray:" destination="BYZ-38-t0r" id="K8v-cS-kqH"/>
                     </connections>
                 </panGestureRecognizer>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="XqJ-9u-UEM">
@@ -127,6 +122,7 @@
                         <action selector="didPanFace:" destination="BYZ-38-t0r" id="ZhO-v4-diy"/>
                     </connections>
                 </panGestureRecognizer>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="jjz-3Q-CN0"/>
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
