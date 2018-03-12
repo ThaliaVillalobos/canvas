@@ -58,11 +58,15 @@ class CanvasViewController: UIViewController {
 
     @IBAction func didPanFace(_ sender: UIPanGestureRecognizer) {
         let translation = sender.translation(in: view)
-        // Here we use the method didPan(sender:), which we defined in the previous step, as the action.
+        
+        //Pan
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(sender:)))
         
+        //Pinch
         let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(didPinch(sender:)))
         
+        //Rotate
+        let rotateGestureRecognizer = UIRotationGestureRecognizer(target: self, action: #selector(didRotate(sender:)))
         
         if sender.state == .began {
             var imageView = sender.view as! UIImageView
@@ -75,6 +79,7 @@ class CanvasViewController: UIViewController {
             newlyCreatedFace.isUserInteractionEnabled = true
             newlyCreatedFace.addGestureRecognizer(panGestureRecognizer)
             newlyCreatedFace.addGestureRecognizer(pinchGestureRecognizer)
+            newlyCreatedFace.addGestureRecognizer(rotateGestureRecognizer)
             
         } else if sender.state == .changed {
             newlyCreatedFace.center = CGPoint(x: newlyCreatedFaceOriginalCenter.x + translation.x, y: newlyCreatedFaceOriginalCenter.y + translation.y)
@@ -103,6 +108,13 @@ class CanvasViewController: UIViewController {
         let imageView = sender.view as! UIImageView
         imageView.transform = imageView.transform.scaledBy(x: scale, y: scale)
         sender.scale = 1
+    }
+    
+    func didRotate(sender: UIRotationGestureRecognizer) {
+        let rotation = sender.rotation
+        let imageView = sender.view as! UIImageView
+        imageView.transform = imageView.transform.rotated(by: rotation)
+        sender.rotation = 0
     }
 
 }
