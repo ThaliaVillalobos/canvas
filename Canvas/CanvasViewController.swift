@@ -60,7 +60,9 @@ class CanvasViewController: UIViewController {
         let translation = sender.translation(in: view)
         // Here we use the method didPan(sender:), which we defined in the previous step, as the action.
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(didPan(sender:)))
-
+        
+        let pinchGestureRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(didPinch(sender:)))
+        
         
         if sender.state == .began {
             var imageView = sender.view as! UIImageView
@@ -69,8 +71,10 @@ class CanvasViewController: UIViewController {
             newlyCreatedFace.center = imageView.center
             newlyCreatedFace.center.y += trayView.frame.origin.y
             newlyCreatedFaceOriginalCenter = newlyCreatedFace.center
+            
             newlyCreatedFace.isUserInteractionEnabled = true
             newlyCreatedFace.addGestureRecognizer(panGestureRecognizer)
+            newlyCreatedFace.addGestureRecognizer(pinchGestureRecognizer)
             
         } else if sender.state == .changed {
             newlyCreatedFace.center = CGPoint(x: newlyCreatedFaceOriginalCenter.x + translation.x, y: newlyCreatedFaceOriginalCenter.y + translation.y)
@@ -92,6 +96,13 @@ class CanvasViewController: UIViewController {
         } else if sender.state == .ended {
             print("Gesture ended")
         }
+    }
+    
+    func didPinch(sender: UIPinchGestureRecognizer) {
+        let scale = sender.scale
+        let imageView = sender.view as! UIImageView
+        imageView.transform = imageView.transform.scaledBy(x: scale, y: scale)
+        sender.scale = 1
     }
 
 }
