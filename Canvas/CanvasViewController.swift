@@ -11,8 +11,10 @@ import UIKit
 class CanvasViewController: UIViewController {
     
     @IBOutlet weak var trayView: UIView!
+  
     var trayOriginalCenter: CGPoint!
     var newlyCreatedFaceOriginalCenter: CGPoint!
+    
     var newlyCreatedFace: UIImageView!
     var trayDownOffset: CGFloat!
     var trayUp: CGPoint!
