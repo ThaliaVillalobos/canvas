@@ -14,6 +14,8 @@
 		8744668B2057211400433E3B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 874466892057211400433E3B /* LaunchScreen.storyboard */; };
 		874466962057211500433E3B /* CanvasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874466952057211500433E3B /* CanvasTests.swift */; };
 		874466A12057211500433E3B /* CanvasUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874466A02057211500433E3B /* CanvasUITests.swift */; };
+		874466B0205726BF00433E3B /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874466AF205726BF00433E3B /* CanvasViewController.swift */; };
+		874466B32057293200433E3B /* TrayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874466B22057293200433E3B /* TrayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		8744669C2057211500433E3B /* CanvasUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CanvasUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		874466A02057211500433E3B /* CanvasUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasUITests.swift; sourceTree = "<group>"; };
 		874466A22057211500433E3B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		874466AF205726BF00433E3B /* CanvasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
+		874466B22057293200433E3B /* TrayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrayView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 		8744667F2057211400433E3B /* Canvas */ = {
 			isa = PBXGroup;
 			children = (
+				874466B12057290800433E3B /* View */,
+				874466AE2057265000433E3B /* ViewController */,
 				874466802057211400433E3B /* AppDelegate.swift */,
 				874466822057211400433E3B /* ViewController.swift */,
 				874466842057211400433E3B /* Main.storyboard */,
@@ -123,6 +129,22 @@
 				874466A22057211500433E3B /* Info.plist */,
 			);
 			path = CanvasUITests;
+			sourceTree = "<group>";
+		};
+		874466AE2057265000433E3B /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				874466AF205726BF00433E3B /* CanvasViewController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+		874466B12057290800433E3B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				874466B22057293200433E3B /* TrayView.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +281,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				874466B32057293200433E3B /* TrayView.swift in Sources */,
 				874466832057211400433E3B /* ViewController.swift in Sources */,
+				874466B0205726BF00433E3B /* CanvasViewController.swift in Sources */,
 				874466812057211400433E3B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
